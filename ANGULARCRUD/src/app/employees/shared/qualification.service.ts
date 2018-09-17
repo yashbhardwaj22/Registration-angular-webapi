@@ -26,6 +26,10 @@ export class QualificationService {
   getEmpID() {
     return this.empID;
   }
+  DeleteQualification(index)
+  {
+    this.EmployeeQualificationList.splice(index,1);
+    }
   AddQualification(modal:Qualification){
     modal.EmpCode=this.empID
     console.log(this.empID)

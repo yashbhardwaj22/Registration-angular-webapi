@@ -1,19 +1,4 @@
 <table class="table table-sm table-hover">
-  <!-- <div class="detail">
-  <h1>Add Education Details</h1>
-  <div>
-    <span>Select Board</span>
-    <select>
-      <option *ngFor="let board of Board ">{{board}}</option>
-    </select>
-  </div>
-  <div>
-    <span>Select Year</span>
-    <select>
-    <option *ngFor="let year of Year">{{year}}</option>
-  </select>
-  </div>
-</div> -->
 <tbody>
     <tr *ngFor="let field of fieldArray; let i = index">
         <td>
@@ -59,6 +44,30 @@
             <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
         </td>
     </tr>
+
+    <!-- <tr>
+        <td>
+            <span>Select Board</span>
+            <select name="boardValue"[(ngModel)]="boardValue">
+              <option *ngFor="let board of Board "[value]="board">{{board}}</option>
+              </select>
+        </td>
+        <td>
+            <span>Select Year</span>
+            <select name="yearValue"[(ngModel)]="yearValue">
+            <option *ngFor="let year of Year"[value]="year">{{year}}</option>
+          </select>
+            
+        </td>
+        <td>
+            <input  class="form-control" type="text"name="MarksValue"[(ngModel)]="MarksValue" placeholder="Marks" />
+        </td>
+       
+       
+        <td>
+            <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+        </td>
+    </tr> -->
 </tbody>
   <!-- <tr *ngFor="let employee of employeeService.employeeList">
     <td>{{employee.FirstName}} - {{employee.LastName}}</td>

@@ -54,9 +54,16 @@ namespace WebAPI.Controllers
         [ResponseType(typeof(Employee))]
         public IHttpActionResult PostEmployee(Employee employee)
         {
-
-            db.Employees.Add(employee);
-            db.SaveChanges();
+            try
+            {
+                db.Employees.Add(employee);
+                db.SaveChanges();
+            }
+            catch(DbUpdateException ex)
+            {
+                throw new DuplicateDataException("Data already exists");
+                
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = employee.EmployeeID }, employee);
         }

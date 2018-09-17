@@ -6,7 +6,7 @@ import { QualificationService } from './shared/qualification.service';
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css'],
-  providers:[EmployeeService,QualificationService]
+  // providers:[EmployeeService,QualificationService]
 })
 export class EmployeesComponent implements OnInit {
 

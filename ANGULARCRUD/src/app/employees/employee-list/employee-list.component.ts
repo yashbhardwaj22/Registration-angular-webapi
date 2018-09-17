@@ -5,6 +5,7 @@ import { Employee } from '../shared/employee.model';
 import { ToastrService } from 'ngx-toastr';
 import { Qualification } from '../shared/qualification';
 import { QualificationService } from '../shared/qualification.service';
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -56,7 +57,7 @@ export class EmployeeListComponent implements OnInit {
   deleteFieldValue(index) {
     this.fieldArray.splice(index, 1);
     this.qualificationService.getEmpID;
-    
+    this.qualificationService.DeleteQualification(index);
   }
 
 
