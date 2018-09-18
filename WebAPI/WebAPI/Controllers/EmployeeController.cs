@@ -61,7 +61,8 @@ namespace WebAPI.Controllers
             }
             catch(DbUpdateException ex)
             {
-                throw new DuplicateDataException("Data already exists");
+                // throw new DuplicateDataException("Data already exists");
+                return Ok("error");
                 
             }
 

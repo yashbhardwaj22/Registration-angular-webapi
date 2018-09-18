@@ -5,6 +5,8 @@ import { Employee } from '../shared/employee.model';
 import { ToastrService } from 'ngx-toastr';
 import { Qualification } from '../shared/qualification';
 import { QualificationService } from '../shared/qualification.service';
+import { debug } from 'util';
+import { Router } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,7 +15,7 @@ import { QualificationService } from '../shared/qualification.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  constructor(private employeeService: EmployeeService, private qualificationService: QualificationService, private toastr: ToastrService) { }
+  constructor(private employeeService: EmployeeService, private qualificationService: QualificationService, private toastr: ToastrService, private router:Router) { }
 
   ngOnInit() {
     this.employeeService.getEmployeeList();
@@ -22,6 +24,7 @@ export class EmployeeListComponent implements OnInit {
   }
   Board = ["CBSE", "ICSE", "RajasthanBoard","UPES","GSIPU","UPTU"];
   Year = ["2012", "2013", "2014", "2015", "2016","2017","2018"];
+qualificationdata=[];
 
   yearValue: number;
   boardValue: string;
@@ -38,11 +41,17 @@ export class EmployeeListComponent implements OnInit {
   private newAttribute: any = {};
 
   addFieldValue() {
+    
     this.fieldArray.push(this.newAttribute)
     this.newAttribute = {};
     this.modal = new Qualification(this.qualificationService.getEmpID(), this.yearValue, this.boardValue, this.MarksValue);
     console.log(this.modal)
-    this.qualificationService.AddQualification(this.modal)
+     this.yearValue=null;
+     this.boardValue="";
+     this.MarksValue=null;
+   this.qualificationService.AddQualification(this.modal)
+   this.qualificationdata.push(this.modal)
+   console.log(this.qualificationdata,"ok")
 
 
 
@@ -55,9 +64,9 @@ export class EmployeeListComponent implements OnInit {
         })
   }
   deleteFieldValue(index) {
-    this.fieldArray.splice(index, 1);
-    this.qualificationService.getEmpID;
-    this.qualificationService.DeleteQualification(index);
+    this.qualificationdata.splice(index, 1);
+     this.qualificationService.getEmpID;
+     this.qualificationService.DeleteQualification(index);
   }
 
 
@@ -70,5 +79,12 @@ export class EmployeeListComponent implements OnInit {
           this.toastr.warning("Deleted Successfully", "Employee Register");
         })
     }
+  }
+
+  signOut()
+  {
+    localStorage.clear();
+    this.router.navigate(['/']);
+
   }
 }
