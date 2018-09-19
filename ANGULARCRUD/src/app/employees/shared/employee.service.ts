@@ -29,6 +29,7 @@ export class EmployeeService {
       requestOptions).map(res => res.json());
   }
   getEmployeeList(){
+    console.log("employee")
     this.http.get('http://localhost:28750/api/Employee')
     .map((data : Response) =>{
       return data.json() as Employee[];

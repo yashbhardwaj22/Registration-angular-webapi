@@ -11,10 +11,13 @@ import { QualificationService } from '../shared/qualification.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
-  constructor(private employeeService: EmployeeService, private qualificationService: QualificationService, private toastr: ToastrService, private routes: Router) { }
+  employeeList=null
+  constructor(private employeeService: EmployeeService, private qualificationService: QualificationService, private toastr: ToastrService, private routes: Router) { 
+    
+  }
 
   ngOnInit() {
+    
     this.resetForm();
   }
   empID: number;
@@ -69,4 +72,6 @@ export class EmployeeComponent implements OnInit {
         });
     }
   }
+
+
 }

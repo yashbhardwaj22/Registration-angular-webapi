@@ -15,6 +15,7 @@ import { componentFactoryName } from '../../node_modules/@angular/compiler';
 import { EmployeeService } from './employees/shared/employee.service';
 import { QualificationService } from './employees/shared/qualification.service';
 import { AuthguardService } from './employees/shared/authguard.service';
+
 const routes:Routes=[{
   path:'',
   component:EmployeeComponent
@@ -27,10 +28,11 @@ const routes:Routes=[{
 },
 {
   path:'**',
-  component:NotfoundComponent,
+  component:NotfoundComponent
 
 
-}
+},
+
 ]
 
 @NgModule({
@@ -40,6 +42,7 @@ const routes:Routes=[{
     EmployeeComponent,
     EmployeeListComponent,
     NotfoundComponent
+    
   ],
   imports: [
     BrowserModule,
