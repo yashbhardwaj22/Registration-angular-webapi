@@ -117,3 +117,8 @@ C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\obj\D
 C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\obj\Debug\WebAPI.csproj.CopyComplete
 C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\obj\Debug\WebAPI.dll
 C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\obj\Debug\WebAPI.pdb
+C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\bin\DataAccess Layer.dll
+C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\bin\DataAccess Layer.pdb
+C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\bin\DataAccess Layer.dll.config
+C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\bin\log4net.dll
+C:\Users\yashb\Music\Angular-5-With-Web-API-CRUD-Application\WebAPI\WebAPI\bin\log4net.xml

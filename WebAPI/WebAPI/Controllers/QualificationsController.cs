@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess_Layer;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,7 +9,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
@@ -74,16 +74,7 @@ namespace WebAPI.Controllers
         [ResponseType(typeof(Qualification))]
         public IHttpActionResult PostQualification(IEnumerable<Qualification> qualifications)
         {
-
-            foreach (Qualification qualification in qualifications)
-
-                db.Qualifications.Add(qualification);
-
-
-            db.SaveChanges();
-
-
-
+            DBlayer.InsertQualification(qualifications);
             return CreatedAtRoute("DefaultApi", new { id = qualifications }, qualifications);
         }
 

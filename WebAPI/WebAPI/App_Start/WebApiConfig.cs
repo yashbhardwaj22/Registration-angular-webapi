@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ExLogger;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.ExceptionHandling;
 
 namespace WebAPI
 {
@@ -15,6 +17,7 @@ namespace WebAPI
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.Services.Add(typeof(IExceptionLogger), new ExceptionAPI());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

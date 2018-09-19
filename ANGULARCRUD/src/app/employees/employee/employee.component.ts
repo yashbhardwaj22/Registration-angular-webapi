@@ -45,7 +45,7 @@ export class EmployeeComponent implements OnInit {
       this.employeeService.postEmployee(form.value)
 
         .subscribe(data => {
-          if (data != "error") {
+          
             this.employeeService.getEmployeeList();
             localStorage.setItem('key', data.EmpCode);
             this.toastr.success('New Record Added Succcessfully', 'Employee Register');
@@ -53,12 +53,10 @@ export class EmployeeComponent implements OnInit {
             this.qualificationService.empID = form.controls.EmpCode.value;
             this.routes.navigate(['List']);
             this.resetForm(form);
-          }
-          else {
-            this.message = "Employee Id already Exists";
-          }
+          
+         
         }, err => {
-          this.message = "Internal Server Error";
+          this.message = "Employee ID Already Exists";
         }
         )
 

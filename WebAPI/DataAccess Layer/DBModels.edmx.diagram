@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="13560994d38f49d098ded354328bed18" Name="Diagram1">
+      <Diagram DiagramId="442644b7d3074ceca5ce4315103a0011" Name="Diagram1">
         <EntityTypeShape EntityType="WebAPIDBModel.Employee" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="WebAPIDBModel.Qualification" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="WebAPIDBModel.FK_Qualification_Employee" ManuallyRouted="false" />

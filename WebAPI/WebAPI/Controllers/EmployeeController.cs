@@ -8,8 +8,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebAPI.Models;
+
 using System.Web.Http.Cors;
+using DataAccess_Layer;
 
 namespace WebAPI.Controllers
 {
@@ -21,9 +22,9 @@ namespace WebAPI.Controllers
         // GET api/Employee
         public IQueryable<Employee> GetEmployees()
         {
-            return db.Employees;
+            var employeeList = DBlayer.GetEmployees();
+            return employeeList;
         }
-
 
         // PUT api/Employee/5
         public IHttpActionResult PutEmployee(int id, Employee employee)
@@ -56,14 +57,11 @@ namespace WebAPI.Controllers
         {
             try
             {
-                db.Employees.Add(employee);
-                db.SaveChanges();
+                DBlayer.InsertEmployee(employee);
             }
-            catch(DbUpdateException ex)
+            catch (DbUpdateException ex)
             {
-                // throw new DuplicateDataException("Data already exists");
-                return Ok("error");
-                
+                throw ex;
             }
 
             return CreatedAtRoute("DefaultApi", new { id = employee.EmployeeID }, employee);
